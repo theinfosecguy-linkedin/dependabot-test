@@ -1,0 +1,19 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <localRepository>/usr/share/maven/ref/repository</localRepository>
+    <interactiveMode>false</interactiveMode>
+</settings>
+<settings>
+  <servers>
+    <server>
+      <id>jmokkang</id>
+      <configuration>
+        <httpHeaders>
+          <property>
+            <name>Private-Token</name>
+            <value>glpat-yt4Avd2qLy6r2NMPkNZ1</value>
+          </property>
+        </httpHeaders>
+      </configuration>
+    </server>
+  </servers>
+</settings>

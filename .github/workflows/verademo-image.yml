@@ -1,0 +1,23 @@
+name: verademo
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+  scan:
+    image: veracode/pipeline-scan:latest
+    script:
+      - java -jar /opt/veracode/pipeline-scan.jar -vid $VERACODE_API_KEY_ID -vkey $VERACODE_API_KEY_SECRET --file /verademo/app/target/verademo.jar
